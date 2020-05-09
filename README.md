@@ -1,2 +1,2 @@
 # vue
-Vue study notes
+Vue(Nuxt) study notes
