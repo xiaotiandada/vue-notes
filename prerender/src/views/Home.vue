@@ -2,6 +2,8 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    {{number}}
+    <button @click="number = Math.random()">random</button>
   </div>
 </template>
 
@@ -11,6 +13,11 @@ import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      number: Math.random()
+    }
+  },
   components: {
     HelloWorld
   }
