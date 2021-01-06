@@ -3,17 +3,24 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
-  <h1>1</h1>
+  <h1>{{ msg }}</h1>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "../components/HelloWorld.vue"; // @ is an alias to /src
+import { defineComponent, onMounted, ref } from "vue";
 
-@Options({
-  components: {
-    HelloWorld
+export default defineComponent({
+  name: "Home",
+  setup() {
+    const msg = ref("title");
+
+    onMounted(() => {
+      console.log("onMounted", msg);
+    });
+
+    return {
+      msg
+    };
   }
-})
-export default class Home extends Vue {}
+});
 </script>
