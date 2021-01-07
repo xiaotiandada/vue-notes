@@ -32,17 +32,19 @@ export default defineComponent({
     const todo = ref<string>("Todo");
     const state: StateProps = reactive({
       todoList: ["hahah", "falsdkjflasdf", "fsdf"],
-      todoVal: "",
-      addTodo() {
-        state.todoList.push(state.todoVal);
-        state.todoVal = "";
-      }
+      todoVal: ""
     });
+
+    const addTodo = () => {
+      state.todoList.push(state.todoVal);
+      state.todoVal = "";
+    };
 
     const refState = toRefs(state);
     return {
       ...refState,
-      todo
+      todo,
+      addTodo
     };
   }
 });
