@@ -1,8 +1,12 @@
-import { createStore } from "vuex";
+import { createStore, Store } from "vuex";
+import todoModules from "./todo";
 
-export default createStore({
+export default createStore<any>({
+  strict: process.env.NODE_ENV !== "production",
   state: {},
   mutations: {},
   actions: {},
-  modules: {}
+  modules: {
+    todoModules
+  }
 });
