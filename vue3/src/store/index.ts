@@ -1,19 +1,17 @@
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
-import todoModules from "./todo";
+import modules from "./modules/index";
 
 export default createStore<any>({
   strict: process.env.NODE_ENV !== "production",
   state: {},
   mutations: {},
   actions: {},
-  modules: {
-    todoModules
-  },
+  modules: modules,
   plugins: [
     createPersistedState({
       key: "vuex_localstorage_simple_todo",
-      paths: ["todoModules.todoList"]
+      paths: ["todo.todoList"]
     })
   ]
 });

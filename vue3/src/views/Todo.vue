@@ -43,11 +43,11 @@ export default defineComponent({
     });
 
     // store todo list
-    const storeTodoList = computed(() => store.state.todoModules.todoList);
+    const storeTodoList = computed(() => store.state.todo.todoList);
 
     // store todo add
     const storeAddTodo = (payload: any) =>
-      store.commit("todoModules/ADD_TODO", payload);
+      store.commit("todo/ADD_TODO", payload);
 
     // btn add todo
     const addTodo = () => {
@@ -56,7 +56,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      console.log("todoComputed", storeAddTodo);
+      console.log("todoComputed", store.state);
     });
 
     const refState = toRefs(state);
