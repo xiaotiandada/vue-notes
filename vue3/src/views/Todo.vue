@@ -47,7 +47,7 @@ export default defineComponent({
 
     // store todo add
     const storeAddTodo = (payload: any) =>
-      store.commit("todoModules/addTodo", payload);
+      store.commit("todoModules/ADD_TODO", payload);
 
     // btn add todo
     const addTodo = () => {
